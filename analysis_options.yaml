@@ -1,0 +1,10 @@
+analyzer:
+  exclude:
+    - build/**
+    - backups/**
+    - .dart_tool/**
+    - .flutter-plugins
+    - .flutter-plugins-dependencies
+
+linter:
+  rules: {}
