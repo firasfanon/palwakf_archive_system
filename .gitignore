@@ -19,3 +19,8 @@ coverage/
 *.keystore
 local.properties
 backups/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.class
