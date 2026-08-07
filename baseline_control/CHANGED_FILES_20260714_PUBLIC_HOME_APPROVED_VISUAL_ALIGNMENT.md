@@ -1,0 +1,12 @@
+# Changed Files — Public Home Approved Visual Alignment V1.0.1
+
+- lib/src/features/public/public_archive_landing_screen.dart
+- test/public_home_workspace_gate_test.dart
+- tools/verify_module_reception_static.py
+- CHANGELOG.md
+- PALWAKF_PLATFORM_COMPREHENSIVE_GUIDE.md
+- docs/ARCHIVE_PUBLIC_HOME_APPROVED_VISUAL_ALIGNMENT_V1_0_1.md
+- baseline_control/CHANGED_FILES_20260714_PUBLIC_HOME_APPROVED_VISUAL_ALIGNMENT.md
+- baseline_control/STATIC_VERIFICATION_20260714_PUBLIC_HOME_APPROVED_VISUAL_ALIGNMENT.log
+- handoff/SESSION_HANDOFF_PUBLIC_HOME_APPROVED_VISUAL_ALIGNMENT_20260714.md
+- handoff/NEXT_SESSION_PROMPT_PUBLIC_HOME_APPROVED_VISUAL_ALIGNMENT_20260714.md

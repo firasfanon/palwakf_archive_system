@@ -1,0 +1,75 @@
+# PALWAKF PROJECT INTEGRATION INTAKE — EVIDENCE ARCHIVE
+intake_version: "1.0"
+
+project:
+  module_id: "evidence_archive"
+  integration_mode: "in_progress_module_development"
+  source_baseline:
+    repository_or_snapshot_reference: "archive_system.zip / canonical-root-candidate"
+    version_or_commit: "ARCHIVE_MODULE_RECEPTION_PREPARED_BASELINE_20260704"
+    build_status: "not_executed_here_flutter_sdk_unavailable"
+
+mapping:
+  local_routes_to_route_slots:
+    - "الرئيسية -> dashboard"
+    - "المستكشف -> list"
+    - "تفاصيل الدليل -> detail"
+    - "إضافة دليل/مجموعة/دفعة -> create"
+    - "المراجعة -> review"
+    - "الحوكمة والإدماج -> settings"
+  local_roles_to_platform_capabilities:
+    - "لا توجد أدوار محلية إنتاجية؛ capabilities معلنة فقط."
+  local_units_to_platform_org_units:
+    - "LOCAL-DEMO-UNIT -> fixture فقط؛ لا يمثل core.org_units."
+  local_storage_assumptions:
+    - "لا تخزين دائم محلي."
+    - "لا bucket ولا prefix ولا URL عام."
+  local_auth_assumptions:
+    - "لا login ولا session ولا RBAC محلي."
+  local_audit_assumptions:
+    - "localAuditTrail ذاكرة جلسة محدودة وليست سجل تدقيق سيادي."
+  local_data_entities:
+    - "EvidenceItem"
+    - "ArchiveCollection"
+    - "EvidenceRelation"
+    - "ReviewTask"
+    - "ImportBatch"
+  local_file_types:
+    - "لم يتم استقبال ملفات فعلية أو مسارات أصلية في هذا baseline."
+  local_gis_capabilities:
+    - "Metadata-only spatial readiness؛ لا basemap ولا PostGIS ولا legal boundary."
+
+unit_scope:
+  user_unit_context_required: true
+  cross_unit_read_default: "deny"
+  cross_unit_write_default: "deny"
+  cross_unit_file_default: "deny"
+  cross_unit_map_default: "deny"
+
+readiness:
+  local_auth_isolated: true
+  local_storage_isolated: true
+  local_routes_isolated: true
+  platform_adapter_boundary_present: true
+  fault_isolation_ready: "local_simulation_only"
+  unit_scope_contract_ready: "local_mock_only"
+  contract_tests_passed: "not_executed_here"
+
+blockers:
+  - "Platform host/root route has not been assigned."
+  - "Central authority and server-side unit scope binding are unavailable to this standalone snapshot."
+  - "Owner schema, APIs/RPCs, File Center, Audit, and GIS provisioning are not authorized."
+  - "No staging UAT evidence has been captured."
+risks:
+  - "Local fixture state must not be mistaken for a platform decision or persistent record."
+  - "Client-side mock denial is not a replacement for server-side enforcement."
+requested_platform_bindings:
+  - "System registry entry for evidence_archive."
+  - "Platform-assigned system host and child route slots."
+  - "Central effective authority and unit context ports."
+  - "Owner schema review and approved API/RPC contract."
+  - "File Center/file-object capability binding."
+  - "Audit event ingestion."
+  - "Map/GIS capability binding."
+  - "Feature flag, health, fallback, and observability registration."
+production_approval_requested: false

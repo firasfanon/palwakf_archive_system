@@ -1,0 +1,17 @@
+# Changed files — MEGA_BATCH_ARCHIVE_UPLOAD_REPRESENTATION_PREVIEW_AND_LOCAL_FILE_QUEUE_V1
+
+```text
+lib/src/core/models/models.dart
+lib/src/core/state/local_operational_store.dart
+lib/src/features/daily/upload_storage_screen.dart
+lib/src/features/representations/representations_screen.dart
+test/upload_representation_preview_queue_test.dart
+tools/verify_module_reception_static.py
+docs/ARCHIVE_UPLOAD_REPRESENTATION_PREVIEW_AND_LOCAL_FILE_QUEUE_V1.md
+CHANGELOG.md
+PALWAKF_PLATFORM_COMPREHENSIVE_GUIDE.md
+PROJECT_SESSIONS_INDEX.md
+error_records/ERROR_RECORD.md
+handoff/NEXT_SESSION_PROMPT.md
+handoff/SESSION_HANDOFF_ARCHIVE_UPLOAD_REPRESENTATION_PREVIEW_LOCAL_FILE_QUEUE_20260714.md
+```

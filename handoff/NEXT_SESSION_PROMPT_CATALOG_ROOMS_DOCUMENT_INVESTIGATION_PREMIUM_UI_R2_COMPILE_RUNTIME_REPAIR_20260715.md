@@ -1,0 +1,1 @@
+Resume PalWakf Evidence Archive from `MEGA_BATCH_ARCHIVE_CATALOG_ROOMS_DOCUMENT_INVESTIGATION_PREMIUM_UI_R2_COMPILE_RUNTIME_REPAIR_V1`. Verify local gates and visual state. Do not accept a baseline unless analyze/test/run are clean and no RenderFlex overflow appears.

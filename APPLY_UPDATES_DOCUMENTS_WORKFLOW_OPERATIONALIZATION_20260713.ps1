@@ -1,0 +1,8 @@
+Write-Host "PALWAKF_ARCHIVE_DOCUMENTS_WORKFLOW_OPERATIONALIZATION=APPLIED_FROM_UPDATES_ONLY"
+Write-Host "Run next:"
+Write-Host "python tools\verify_module_reception_static.py"
+Write-Host "flutter pub get"
+Write-Host "dart format lib test"
+Write-Host "flutter analyze"
+Write-Host "flutter test"
+Write-Host "flutter run -d chrome --target lib/main.dart"

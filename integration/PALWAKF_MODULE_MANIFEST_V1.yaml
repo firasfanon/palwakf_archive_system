@@ -1,0 +1,101 @@
+# PALWAKF MODULE MANIFEST — EVIDENCE ARCHIVE
+schema_version: "1.0"
+
+module:
+  module_id: "evidence_archive"
+  display_name_ar: "أرشيف الأدلة والمستكشف المكاني"
+  lifecycle_mode: "in_progress_module_development"
+  technology: "flutter"
+  module_version: "0.4.0"
+  owner_team_or_contact: "PalWakf Archive Project"
+  current_status: "integration_boundary_prepared"
+
+platform:
+  required_system_host: "platform_assigned"
+  route_slots:
+    - dashboard
+    - list
+    - detail
+    - create
+    - review
+    - reports
+    - settings
+  feature_flag_required: true
+  standalone_production_runtime: false
+
+authority:
+  required_capabilities:
+    - "evidence_archive.evidence.read"
+    - "evidence_archive.evidence.create_local_draft"
+    - "evidence_archive.evidence.update_local_draft"
+    - "evidence_archive.evidence.quarantine_local_draft"
+    - "evidence_archive.collections.create_local_draft"
+    - "evidence_archive.relations.propose_local_draft"
+    - "evidence_archive.review.update_local_draft"
+    - "evidence_archive.imports.catalog_local_draft"
+    - "file_object.read_authorized"
+    - "file_object.create"
+    - "map.render"
+    - "layer.read"
+    - "georeference.submit"
+  uses_central_effective_authority: true
+  local_roles_allowed_in_production: false
+  super_admin_universal_authority_expected: true
+
+unit_scope:
+  unit_scoped: true
+  required_context: true
+  scope_resolution: "platform_effective_authority"
+  cross_unit_access_default: "deny"
+  server_side_enforcement_required: true
+
+data:
+  persistent_data_required: true
+  owner_schema_intent: "evidence_archive (proposal only; platform approval required)"
+  public_base_tables_allowed: false
+  unit_ownership_required: true
+  audit_required: true
+  retention_policy_required: true
+
+storage:
+  file_storage_required: true
+  direct_public_urls_allowed: false
+  direct_client_storage_write_allowed: false
+  file_object_capabilities:
+    - "file_object.create"
+    - "file_object.attach"
+    - "file_object.read_authorized"
+    - "file_object.version"
+    - "file_object.quarantine"
+    - "file_object.restore"
+    - "file_object.audit"
+
+gis:
+  gis_required: true
+  derived_spatial_result_is_legal_boundary: false
+  requested_capabilities:
+    - "map.render"
+    - "layer.read"
+    - "layer.review"
+    - "georeference.submit"
+    - "spatial_redaction.apply"
+
+resilience:
+  module_health_contract_required: true
+  feature_flag_required: true
+  route_fallback_required: true
+  independent_rollback_required: true
+  module_failure_must_not_break_core: true
+  module_failure_must_not_break_other_modules: true
+
+integration:
+  local_host_available: true
+  mock_adapters_available: true
+  platform_adapter_boundary_available: true
+  contract_tests_status: "prepared_not_executed_in_this_environment"
+  known_gaps:
+    - "No platform-owned route host assigned."
+    - "No central effective authority adapter bound."
+    - "No server-side unit context bound."
+    - "No File Center, audit, GIS, or owner-schema provisioning."
+    - "No staging integration UAT or production approval."

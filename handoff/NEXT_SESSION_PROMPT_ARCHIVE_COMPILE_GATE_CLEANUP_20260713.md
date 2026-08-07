@@ -1,0 +1,1 @@
+استأنف مشروع PalWakf Evidence Archive من دفعة `MEGA_BATCH_ARCHIVE_FULL_PRODUCT_PIPELINE_COMPILE_GATE_CLEANUP_V1`. تحقق من نتائج المستخدم المحلية لأوامر: cleanup script، static verify، dart format، flutter analyze، flutter test، flutter run. لا تفعل أي ربط بعيد؛ الحالة الحاكمة ما زالت NOT_CONNECTED_BY_DESIGN / STAGING_NOT_APPROVED / PRODUCTION_NOT_APPROVED.

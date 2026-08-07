@@ -1,0 +1,35 @@
+# Next Session Prompt — MEGA_BATCH_ARCHIVE_UI_UX_PRODUCTIVE_PAGES_AND_GROUPED_SIDEBAR_REFOCUS_V1
+
+تابع تنفيذ الدفعة `MEGA_BATCH_ARCHIVE_UI_UX_PRODUCTIVE_PAGES_AND_GROUPED_SIDEBAR_REFOCUS_V1` من مشروع PalWakf Evidence Archive.
+
+ابدأ من المرجع:
+
+```text
+docs/ARCHIVE_UI_UX_PRODUCTIVE_PAGES_AND_GROUPED_SIDEBAR_REFOCUS_V1.md
+```
+
+المطلوب:
+
+1. UI/UX أولًا.
+2. إعادة بناء السايد بار بتبويبات حسب فئة الاستخدام.
+3. عزل الحوكمة داخل الإدارة فقط.
+4. جعل صفحات الوثائق/إضافة وثيقة/تفاصيل الوثيقة/الرفع/البحث/المراجعة صفحات إنتاجية يومية.
+5. إضافة static guards والاختبارات التالية:
+
+```text
+SIDEBAR_GROUPED_BY_USAGE=PASS
+GOVERNANCE_IS_ADMIN_SUBPAGE_ONLY=PASS
+DAILY_UX_PRIMARY_NAVIGATION=PASS
+DOCUMENT_PRODUCTIVE_PAGES=PASS
+ADD_DOCUMENT_FLOW_VISIBLE=PASS
+DOCUMENT_DETAIL_TABS_VISIBLE=PASS
+NO_GOVERNANCE_FIRST_EXPERIENCE=PASS
+```
+
+الحالة الحاكمة:
+
+```text
+PALWAKF_REMOTE_INTEGRATION=NOT_CONNECTED_BY_DESIGN
+STAGING_APPROVAL=NOT_APPROVED
+PRODUCTION_APPROVAL=NOT_APPROVED
+```

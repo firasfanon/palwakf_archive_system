@@ -1,0 +1,1 @@
+Continue PalWakf Evidence Archive from baseline candidate `MEGA_BATCH_ARCHIVE_REVIEW_WORKFLOW_AND_HUMAN_APPROVAL_STUDIO_V1`. First confirm local verification results. If PASS, promote baseline. Next likely phase: evidence viewer side-by-side image/text comparison with reviewer annotations and confidence per field.
