@@ -1,0 +1,1 @@
+استكمل مشروع PalWakf Evidence Archive من الدفعة `MEGA_BATCH_ARCHIVE_OTTOMAN_ENGLISH_DOCUMENT_READING_AND_TRANSLATION_ASSISTANT_FOUNDATION_V1` بعد تحقق analyze/test/run محليًا، مع الحفاظ على منع النشر قبل الاعتماد البشري.

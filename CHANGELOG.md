@@ -438,3 +438,11 @@ Prepared a local platform-integration boundary, capability gate, local fixture u
 ## MEGA_BATCH_ARCHIVE_REVIEW_WORKFLOW_HUMAN_APPROVAL_STUDIO_R3_APPLY_GUARD_AND_LEGACY_TEST_REPAIR_V1
 - REVIEW_STUDIO_R3_APPLY_GUARD_AND_LEGACY_TEST_REPAIR: repaired brittle apply guard and retained legacy review workflow/text draft no-publication contract.
 - No platform/database/staging/production mutation.
+
+
+## 2026-08-08 — MEGA_BATCH_ARCHIVE_OTTOMAN_ENGLISH_DOCUMENT_READING_AND_TRANSLATION_ASSISTANT_FOUNDATION_V1
+
+- Added internal Ottoman/English document reading and translation assistant foundation.
+- Added draft-only reading profiles for Ottoman, English, and mixed documents.
+- Added OCR/HTR/transcription/translation conceptual layers, terminology glossary, confidence/status panel, and human review gate.
+- No real OCR, HTR, external model, translation engine, database, staging, or production integration.

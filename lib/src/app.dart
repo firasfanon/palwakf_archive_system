@@ -20,6 +20,7 @@ import 'features/dashboard/operations_dashboard_screen.dart';
 import 'features/evidence/evidence_explorer_screen.dart';
 import 'features/governance/platform_integration_readiness_screen.dart';
 import 'features/public/public_archive_landing_screen.dart';
+import 'features/reading/ottoman_english_document_assistant_screen.dart';
 import 'features/imports/import_catalog_screen.dart';
 import 'features/registry/evidence_registry_screen.dart';
 import 'features/reports/reports_notifications_screen.dart';
@@ -140,6 +141,7 @@ class _AppShellState extends ConsumerState<_AppShell> {
   // NO_GOVERNANCE_FIRST_EXPERIENCE: governance is not the primary product experience.
   // GOVERNANCE_SUBPAGE_ONLY / GOVERNANCE_IS_ADMIN_SUBPAGE_ONLY: staging, controlled UAT,
   // production readiness, feature flags, and platform health remain inside the administration group.
+  // DOCUMENT_READING_ASSISTANT_NAV_VISIBILITY_REPAIR_R3_ANCHORLESS: visible daily and explorer navigation entries are inserted without fragile text anchors.
   static const _groups = <_NavigationGroup>[
     _NavigationGroup(
       icon: Icons.work_outline,
@@ -156,6 +158,9 @@ class _AppShellState extends ConsumerState<_AppShell> {
         _NavigationEntry('upload', Icons.cloud_upload_outlined, 'الرفع والحفظ'),
         _NavigationEntry(
             'smart-search', Icons.psychology_alt_outlined, 'البحث الذكي'),
+        // DOCUMENT_READING_ASSISTANT_DAILY_VISIBLE_NAV_ENTRY
+        _NavigationEntry('document-reading-assistant', Icons.translate_outlined,
+            'مساعد قراءة الوثائق'),
       ],
     ),
     // LAYERED_ARCHIVE_CATALOGS: catalog entry points are first-class archive navigation, after daily work and before organization/governance.
@@ -191,6 +196,9 @@ class _AppShellState extends ConsumerState<_AppShell> {
         // OCR_TRANSLATION_TRANSCRIPTION_DRAFT_LAYER
         _NavigationEntry(
             'text-layers', Icons.article_outlined, 'OCR والترجمة والتفريغ'),
+        // DOCUMENT_READING_ASSISTANT_NAV_ENTRY
+        _NavigationEntry('document-reading-assistant', Icons.translate_outlined,
+            'مساعد قراءة الوثائق'),
       ],
     ),
     _NavigationGroup(
@@ -222,6 +230,9 @@ class _AppShellState extends ConsumerState<_AppShell> {
             'spatial-temporal', Icons.map_outlined, 'المكان والزمن'),
         _NavigationEntry(
             'saved-searches', Icons.bookmark_added_outlined, 'البحوث المحفوظة'),
+        // DOCUMENT_READING_ASSISTANT_EXPLORER_VISIBLE_NAV_ENTRY
+        _NavigationEntry('document-reading-assistant', Icons.translate_outlined,
+            'مساعد قراءة الوثائق'),
       ],
     ),
     _NavigationGroup(
@@ -372,6 +383,9 @@ class _AppShellState extends ConsumerState<_AppShell> {
         return const RepresentationsScreen();
       case 'text-layers':
         return const OcrTranslationTranscriptionScreen();
+      case 'document-reading-assistant':
+        // DOCUMENT_READING_ASSISTANT_ROUTE
+        return const OttomanEnglishDocumentAssistantScreen();
       case 'access-audit':
       case 'publication':
       case 'retention':

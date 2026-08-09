@@ -535,3 +535,12 @@ The Review Workflow / Human Approval Studio remains local-only. R2 repairs legac
 ## MEGA_BATCH_ARCHIVE_REVIEW_WORKFLOW_HUMAN_APPROVAL_STUDIO_R3_APPLY_GUARD_AND_LEGACY_TEST_REPAIR_V1
 - REVIEW_STUDIO_R3_APPLY_GUARD_AND_LEGACY_TEST_REPAIR: repaired brittle apply guard and retained legacy review workflow/text draft no-publication contract.
 - No platform/database/staging/production mutation.
+
+
+## Ottoman/English Document Reading Assistant Foundation — 2026-08-08
+
+Batch: `MEGA_BATCH_ARCHIVE_OTTOMAN_ENGLISH_DOCUMENT_READING_AND_TRANSLATION_ASSISTANT_FOUNDATION_V1`
+
+This establishes the archive's internal assistant layer for Ottoman and English source documents. It is designed for printed and handwritten documents, Ottoman word recognition, English legal/historical terminology, Arabic verified text output, source image/text alignment, and human review.
+
+Governance boundary: all AI/OCR/HTR/translation outputs are draft-only until human approval.

@@ -1,0 +1,13 @@
+# Changed files — Ottoman/English Document Reading Assistant Foundation
+
+Batch: `MEGA_BATCH_ARCHIVE_OTTOMAN_ENGLISH_DOCUMENT_READING_AND_TRANSLATION_ASSISTANT_FOUNDATION_V1`
+
+```text
+lib/src/features/reading/ottoman_english_document_assistant_screen.dart
+lib/src/app.dart
+test/ottoman_english_document_reading_assistant_test.dart
+tools/verify_module_reception_static.py
+docs/ARCHIVE_OTTOMAN_ENGLISH_DOCUMENT_READING_AND_TRANSLATION_ASSISTANT_FOUNDATION_V1.md
+PALWAKF_PLATFORM_COMPREHENSIVE_GUIDE.md
+CHANGELOG.md
+```

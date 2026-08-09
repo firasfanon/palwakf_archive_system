@@ -47,11 +47,13 @@ REQUIRED = [
     LIB / "src/features/daily/security_backup_screen.dart",
     LIB / "src/features/daily/technical_blueprint_screen.dart",
     LIB / "src/features/text_layers/ocr_translation_transcription_screen.dart",
+    LIB / "src/features/reading/ottoman_english_document_assistant_screen.dart",
     LIB / "src/features/access/access_publication_retention_audit_screen.dart",
     TEST / "platform_integration_contract_test.dart",
     TEST / "productive_document_detail_add_flow_test.dart",
     TEST / "catalog_aware_metadata_templates_test.dart",
     TEST / "ocr_translation_transcription_draft_layer_test.dart",
+    TEST / "ottoman_english_document_reading_assistant_test.dart",
     TEST / "daily_user_experience_contract_test.dart",
     TEST / "public_home_workspace_gate_test.dart",
     INTEGRATION / "PALWAKF_MODULE_MANIFEST_V1.yaml",
@@ -614,6 +616,52 @@ def main() -> int:
             if marker not in contract_source:
                 failures.append(f"MISSING_CONTRACT_MARKER={marker}")
 
+
+    reading_assistant_path = LIB / "src/features/reading/ottoman_english_document_assistant_screen.dart"
+    reading_test_path = TEST / "ottoman_english_document_reading_assistant_test.dart"
+    reading_source = reading_assistant_path.read_text(encoding="utf-8") if reading_assistant_path.is_file() else ""
+    reading_test_source = reading_test_path.read_text(encoding="utf-8") if reading_test_path.is_file() else ""
+    reading_assistant_sources = app_source + "\n" + reading_source + "\n" + reading_test_source
+    reading_assistant_markers = {
+        "OTTOMAN_ENGLISH_DOCUMENT_READING_TRANSLATION_ASSISTANT_FOUNDATION": "OTTOMAN_ENGLISH_DOCUMENT_READING_TRANSLATION_ASSISTANT_FOUNDATION",
+        "OTTOMAN_DOCUMENT_READING_ASSISTANT": "OTTOMAN_DOCUMENT_READING_ASSISTANT",
+        "ENGLISH_DOCUMENT_READING_ASSISTANT": "ENGLISH_DOCUMENT_READING_ASSISTANT",
+        "PRINTED_AND_HANDWRITTEN_READING_PROFILES": "PRINTED_AND_HANDWRITTEN_READING_PROFILES",
+        "OTTOMAN_WORD_RECOGNITION_GLOSSARY": "OTTOMAN_WORD_RECOGNITION_GLOSSARY",
+        "OCR_HTR_TRANSLATION_LAYER_PIPELINE": "OCR_HTR_TRANSLATION_LAYER_PIPELINE",
+        "ARABIC_VERIFIED_TEXT_OUTPUT": "ARABIC_VERIFIED_TEXT_OUTPUT",
+        "READING_CONFIDENCE_BY_WORD_LINE_PARAGRAPH": "READING_CONFIDENCE_BY_WORD_LINE_PARAGRAPH",
+        "SOURCE_IMAGE_TEXT_ALIGNMENT": "SOURCE_IMAGE_TEXT_ALIGNMENT",
+        "HUMAN_REVIEW_REQUIRED_FOR_HISTORICAL_TRANSLATION": "HUMAN_REVIEW_REQUIRED_FOR_HISTORICAL_TRANSLATION",
+        "NO_REAL_OCR_ENGINE_IN_FOUNDATION": "NO_REAL_OCR_ENGINE_IN_FOUNDATION",
+        "NO_REAL_TRANSLATION_ENGINE_IN_FOUNDATION": "NO_REAL_TRANSLATION_ENGINE_IN_FOUNDATION",
+        "AI_READING_OUTPUT_DRAFT_ONLY": "AI_READING_OUTPUT_DRAFT_ONLY",
+        "OTTOMAN_TERMS_REQUIRE_GLOSSARY_REVIEW": "OTTOMAN_TERMS_REQUIRE_GLOSSARY_REVIEW",
+        "NO_PUBLICATION_FROM_DOCUMENT_READING_ASSISTANT": "NO_PUBLICATION_FROM_DOCUMENT_READING_ASSISTANT",
+        "DOCUMENT_READING_ASSISTANT_NAV_ENTRY": "DOCUMENT_READING_ASSISTANT_NAV_ENTRY",
+        "DOCUMENT_READING_ASSISTANT_ROUTE": "DOCUMENT_READING_ASSISTANT_ROUTE",
+        "DOCUMENT_READING_PROFILE_MODEL": "class DocumentReadingProfile",
+        "READING_LAYER_MODEL": "class ReadingLayer",
+        "HISTORICAL_TERM_MODEL": "class HistoricalTerm",
+    }
+    for label, marker in reading_assistant_markers.items():
+        if marker not in reading_assistant_sources:
+            failures.append(f"MISSING_OTTOMAN_ENGLISH_READING_ASSISTANT_MARKER={label}")
+    if "OttomanEnglishDocumentAssistantScreen" not in app_source or "document-reading-assistant" not in app_source:
+        failures.append("DOCUMENT_READING_ASSISTANT_NOT_REACHABLE_FROM_WORKSPACE_NAV")
+    if "NO_REAL_OCR_ENGINE_IN_FOUNDATION" not in reading_source or "NO_REAL_TRANSLATION_ENGINE_IN_FOUNDATION" not in reading_source:
+        failures.append("FOUNDATION_ENGINE_BOUNDARY_MARKERS_MISSING")
+
+    if app_source.count("_NavigationEntry('document-reading-assistant'") < 3:
+        failures.append("DOCUMENT_READING_ASSISTANT_VISIBLE_NAV_ENTRIES_MISSING")
+    for marker in [
+        "DOCUMENT_READING_ASSISTANT_DAILY_VISIBLE_NAV_ENTRY",
+        "DOCUMENT_READING_ASSISTANT_EXPLORER_VISIBLE_NAV_ENTRY",
+        "DOCUMENT_READING_ASSISTANT_NAV_VISIBILITY_REPAIR_R3_ANCHORLESS",
+    ]:
+        if marker not in app_source:
+            failures.append(f"MISSING_DOCUMENT_READING_ASSISTANT_NAV_VISIBILITY_MARKER={marker}")
+
     if failures:
         print("MODULE_RECEPTION_STATIC_VERIFY=FAIL")
         for failure in failures:
@@ -790,6 +838,26 @@ def main() -> int:
     print("TEXT_DRAFT_POLICY_MARKER_RETENTION=PASS")
     print("REVIEW_QUEUE_LEGACY_MARKER_RETENTION=PASS")
     print("REVIEW_STUDIO_R3_APPLY_GUARD_AND_LEGACY_TEST_REPAIR=PASS")
+    print("OTTOMAN_ENGLISH_DOCUMENT_READING_TRANSLATION_ASSISTANT_FOUNDATION=PASS")
+    print("OTTOMAN_DOCUMENT_READING_ASSISTANT=PASS")
+    print("ENGLISH_DOCUMENT_READING_ASSISTANT=PASS")
+    print("PRINTED_AND_HANDWRITTEN_READING_PROFILES=PASS")
+    print("OTTOMAN_WORD_RECOGNITION_GLOSSARY=PASS")
+    print("OCR_HTR_TRANSLATION_LAYER_PIPELINE=PASS")
+    print("ARABIC_VERIFIED_TEXT_OUTPUT=PASS")
+    print("READING_CONFIDENCE_BY_WORD_LINE_PARAGRAPH=PASS")
+    print("SOURCE_IMAGE_TEXT_ALIGNMENT=PASS")
+    print("HUMAN_REVIEW_REQUIRED_FOR_HISTORICAL_TRANSLATION=PASS")
+    print("NO_REAL_OCR_ENGINE_IN_FOUNDATION=PASS")
+    print("NO_REAL_TRANSLATION_ENGINE_IN_FOUNDATION=PASS")
+    print("AI_READING_OUTPUT_DRAFT_ONLY=PASS")
+    print("OTTOMAN_TERMS_REQUIRE_GLOSSARY_REVIEW=PASS")
+    print("NO_PUBLICATION_FROM_DOCUMENT_READING_ASSISTANT=PASS")
+    print("DOCUMENT_READING_ASSISTANT_NAV_ENTRY=PASS")
+    print("DOCUMENT_READING_ASSISTANT_ROUTE=PASS")
+    print("DOCUMENT_READING_ASSISTANT_DAILY_VISIBLE_NAV_ENTRY=PASS")
+    print("DOCUMENT_READING_ASSISTANT_EXPLORER_VISIBLE_NAV_ENTRY=PASS")
+    print("DOCUMENT_READING_ASSISTANT_NAV_VISIBILITY_REPAIR_R3_ANCHORLESS=PASS")
     print("PLATFORM_MUTATION=NONE")
     print("DATABASE_MUTATION=NONE")
     print("PRODUCTION_APPROVAL=NOT_IMPLIED")
