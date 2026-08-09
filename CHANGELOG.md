@@ -446,3 +446,9 @@ Prepared a local platform-integration boundary, capability gate, local fixture u
 - Added draft-only reading profiles for Ottoman, English, and mixed documents.
 - Added OCR/HTR/transcription/translation conceptual layers, terminology glossary, confidence/status panel, and human review gate.
 - No real OCR, HTR, external model, translation engine, database, staging, or production integration.
+
+## 2026-08-10 — Document Reading Assistant Interactive Workbench
+
+- Added interactive local workbench for Ottoman/English document reading.
+- Added draft text comparison, glossary builder, confidence and reviewer decision panels.
+- Preserved no-publication and no-external-engine boundaries.

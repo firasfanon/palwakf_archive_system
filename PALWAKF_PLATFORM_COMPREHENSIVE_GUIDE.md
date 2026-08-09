@@ -544,3 +544,7 @@ Batch: `MEGA_BATCH_ARCHIVE_OTTOMAN_ENGLISH_DOCUMENT_READING_AND_TRANSLATION_ASSI
 This establishes the archive's internal assistant layer for Ottoman and English source documents. It is designed for printed and handwritten documents, Ottoman word recognition, English legal/historical terminology, Arabic verified text output, source image/text alignment, and human review.
 
 Governance boundary: all AI/OCR/HTR/translation outputs are draft-only until human approval.
+
+## MEGA_BATCH_ARCHIVE_DOCUMENT_READING_ASSISTANT_INTERACTIVE_WORKBENCH_V1
+
+Adds an interactive draft-only workbench for Ottoman and English document reading. It supports profile selection, image-region notation, manual reading/transcription draft editing, Arabic translation drafting, glossary building, confidence assignment, and reviewer notes. It does not connect to real OCR/HTR/translation engines, file upload backends, databases, staging, or production.
